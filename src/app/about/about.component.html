@@ -1,0 +1,25 @@
+<div class="container principalAbout">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h1>{{ BemVIndo }}</h1>
+        <!-- menssagem de erro -->
+        <div class="alert alert-danger" role="alert" *ngIf="msgErro != ''" >
+          {{msgErro}}
+        </div>
+        <!-- fim menssagem -->
+        <label for="">Lista de Tarefas?</label>
+        <input type="text" placeholder="Preencha..." required name="nome" class="form-control {{ classVazio }}"  [(ngModel)]="nome" (click)="nomeClear()" (blur)="nomeVazio()">
+        <button type="submit" class="btn btn-info btn-block btnAdd" name="button" (click)='Add()' >Add a list</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3" [@goals]="publicDeals.length">
+
+      <p *ngFor="let list of publicDeals, let i = index" class="lista" (click)="removeItem(i)">
+        {{ list }} <img src="https://png.icons8.com/color/20/000000/delete-sign.png" id="imgRemove">
+      </p>
+
+  </div>
+</div>
