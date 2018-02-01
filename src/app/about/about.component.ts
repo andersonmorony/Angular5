@@ -36,7 +36,7 @@ export class AboutComponent implements OnInit {
   BemVIndo: string = 'BEM VINDO!';
   nome: string = 'Ex: Exterminar o comunismo';
   publicDeals: any[] = [];
-  qtdList: int = 0;
+  qtdList: number = 0;
   msgErro: string;
   classVazio: string;
 
